@@ -5,6 +5,7 @@ public class Main {
     public static void main(String[] args) {
         Random random = new Random();
         int x = random.nextInt(6) + 1;
-        System.out.println(x);
+        int y = random.nextInt(6) + 1;
+        System.out.println("Dice One: " + x + "\n" + "Dice Two: " + y);
     }
 }
