@@ -15,6 +15,6 @@ public class Main {
         System.out.println("Dice One: " + x + "\n" + "Dice Two: " + y);
         player_2 = player_2+x+y;
         System.out.println(player_2);
-        //test
+
     }
 }
