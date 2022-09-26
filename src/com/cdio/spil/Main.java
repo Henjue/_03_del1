@@ -1,58 +1,57 @@
 package com.cdio.spil;
 import java.util.Random;
 import java.util.Scanner;
-public class Main  {
+public class Main {
     public static void main(String[] args) {
-        int x, y, player_1 = 0, player_2 = 0;
-        String b;
-        Scanner spil;
-        while(true) {
-            Random random = new Random();
-            spil = new Scanner(System.in);
-            System.out.println("\n" + "Player 1, press enter to roll the die");
-            b = spil.nextLine();
+        int i, to2 = 0, to3 = 0 , to4 = 0, to5 = 0, to6 = 0, to7 = 0, to8 = 0, to9 = 0, to10 = 0, to11 = 0, to12 = 0, x, y;
+        Random random = new Random();
+        for (i = 0; i <= 1000000; i++){
             x = random.nextInt(6) + 1;
             y = random.nextInt(6) + 1;
-            System.out.println("Dice One: " + x + "\n" + "Dice Two: " + y);
-            player_1 = player_1 + x + y;
-            System.out.println("Player 1 score is " + player_1);
-            if (x==1 && y==1) {
-                System.out.println("Player 1 has rolled two " + x + "'s\n and loses all points");
-                System.out.println("Press enter to continue...");
-                player_1 = 0;
-                System.out.println("\n" + "Player 1 score is " + player_1);
+            if (x+y == 2){
+                to2++;
             }
-            spil = new Scanner(System.in);
-            System.out.println("\n" + "Player 2, press enter to roll the die");
-            b = spil.nextLine();
-            x = random.nextInt(6) + 1;
-            y = random.nextInt(6) + 1;
-            System.out.println("Dice One: " + x + "\n" + "Dice Two: " + y);
-            player_2 = player_2 + x + y;
-            System.out.println("Player 2 score is " + player_2);
-            if (x==1 && y==1) {
-                System.out.println("Player 2 has rolled two " + x + "'s\n and loses all points");
-                System.out.println("Press enter to continue...");
-                player_2 = 0;
-                System.out.println("\n" + "Player 2 score is " + player_2);
+            else if (x+y == 3){
+                to3++;
             }
-
-            if (player_1 >=40 && player_1 == player_2)
-            {
-                System.out.println("Uafgjort");
-                break;
+            else if (x+y == 4){
+                to4++;
             }
-            else if (player_1 >= 40 && player_2 < player_1)
-            {
-                System.out.printf("Player 1 wins with " + player_1 + " points," + (player_1 - player_2) + " ahead of player 2");
-                break;
+            else if (x+y == 5){
+                to5++;
             }
-            else if (player_2 >=40)
-            {
-                System.out.printf("Player 2 wins with " + player_2 + " points," + (player_2 - player_1) + " ahead of player 1");
-                break;
-           //Test works
+            else if (x+y == 6){
+                to6++;
+            }
+            else if (x+y == 7){
+                to7++;
+            }
+            else if (x+y == 8){
+                to8++;
+            }
+            else if (x+y == 9){
+                to9++;
+            }
+            else if (x+y == 10){
+                to10++;
+            }
+            else if (x+y == 11){
+                to11++;
+            }
+            else if (x+y == 12){
+                to12++;
             }
         }
+        System.out.println("Total af toere = " + to2);
+        System.out.println("Total af trere = " + to3);
+        System.out.println("Total af fiere = " + to4);
+        System.out.println("Total af femere = " + to5);
+        System.out.println("Total af seksere = " + to6);
+        System.out.println("Total af syvere = " + to7);
+        System.out.println("Total af ottere = " + to8);
+        System.out.println("Total af niere = " + to9);
+        System.out.println("Total af tiere = " + to10);
+        System.out.println("Total af elvere = " + to11);
+        System.out.println("Total af tolvere = " + to12);
     }
 }
