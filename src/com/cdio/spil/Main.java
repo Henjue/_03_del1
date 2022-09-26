@@ -30,7 +30,7 @@ public class Main {
                 player_1 = 0;
                 scanner.nextLine();
             }
-            // TODO: Does player get an extra roll after playing two 1's?
+            // TODO: Does player get an extra roll after playing two 1's
             else if (x==y) {
                 boolean lastThrowSix = false;
                 System.out.println("Player 1 has rolled two " + x + "'s\n and may roll again");
