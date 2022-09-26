@@ -17,20 +17,21 @@ public class Main {
             player_2 = player_2 + x + y;
             System.out.println("Player 2 score is " + player_2);
 
-            if (player_1 >=40 && player_1 == player_2){
+            if (player_1 >=40 && player_1 == player_2)
+            {
                 System.out.println("Uafgjort");
                 break;
             }
-            else if (player_1 >= 40)
+            else if (player_1 >= 40 && player_2 < player_1)
             {
                 System.out.printf("Player 1 wins with " + player_1 + " points," + (player_1 - player_2) + " ahead of player 2");
                 break;
             }
-            else if (player_2 >=40){
+            else if (player_2 >=40)
+            {
                 System.out.printf("Player 2 wins with " + player_2 + " points," + (player_2 - player_1) + " ahead of player 1");
                 break;
             }
-        //hey there
         }
     }
 }
