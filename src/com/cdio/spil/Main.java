@@ -39,6 +39,7 @@ public class Main  {
             {
                 System.out.printf("Player 2 wins with " + player_2 + " points," + (player_2 - player_1) + " ahead of player 1");
                 break;
+           //Test works
             }
         }
     }
