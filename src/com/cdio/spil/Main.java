@@ -5,8 +5,8 @@ import java.lang.Math;
 public class Main {
     public static void main(String[] args) {
 
-        int i, runs, et = 0, to = 0, tre = 0, fire = 0, fem = 0, seks = 0, syv = 0, otte = 0, ni = 0, ti = 0, elleve = 0, tolv = 0, x, y;
-
+        int i, runs, x, y;
+        double et = 0, to = 0, tre = 0, fire = 0, fem = 0, seks = 0, syv = 0, otte = 0, ni = 0, ti = 0, elleve = 0, tolv = 0;
         Random random = new Random();
         Scanner scan = new Scanner(System.in);
         System.out.println("Vælg en af følgende test: \nTOTAL FORDELING AF TERNINGSUM (Tast 1)\nPRÆCISIONSGRAD AF FORDELINGEN AF ØJENTAL (Tast 2)");
@@ -54,17 +54,17 @@ public class Main {
 
             //Printer svarene
             System.out.println("TOTAL FORDELING AF TERNINGSUM");
-            System.out.println("Total sum to     = " + to + " - Fordeling: " + Math.round(fordelingTo * 100) + "%");
-            System.out.println("Total sum tre    = " + tre + " - Fordeling: " + Math.round(fordelingTre * 100) + "%");
-            System.out.println("Total sum fire   = " + fire + " - Fordeling: " + Math.round(fordelingFire * 100) + "%");
-            System.out.println("Total sum fem    = " + fem + " - Fordeling: " + Math.round(fordelingFem * 100) + "%");
-            System.out.println("Total sum seks   = " + seks + " - Fordeling: " + Math.round(fordelingSeks * 100) + "%");
-            System.out.println("Total sum syv    = " + syv + " - Fordeling: " + Math.round(fordelingSyv * 100) + "%");
-            System.out.println("Total sum otte   = " + otte + " - Fordeling: " + Math.round(fordelingOtte * 100) + "%");
-            System.out.println("Total sum ni     = " + ni + " - Fordeling: " + Math.round(fordelingNi * 100) + "%");
-            System.out.println("Total sum ti     = " + ti + " - Fordeling: " + Math.round(fordelingTi * 100) + "%");
-            System.out.println("Total sum elleve = " + elleve + " - Fordeling: " + Math.round(fordelingElleve * 100) + "%");
-            System.out.println("Total sum tolv   = " + tolv + " - Fordeling: " + Math.round(fordelingTolv * 100) + "%");
+            System.out.println("Total sum to     = " + to + " - Fordeling: " + Math.round(fordelingTo * 100) + "% Forventet: 2.78%");
+            System.out.println("Total sum tre    = " + tre + " - Fordeling: " + Math.round(fordelingTre * 100) + "% Forventet: 5.56%");
+            System.out.println("Total sum fire   = " + fire + " - Fordeling: " + Math.round(fordelingFire * 100) + "% Forventet: 8.33%");
+            System.out.println("Total sum fem    = " + fem + " - Fordeling: " + Math.round(fordelingFem * 100) + "% Forventet: 11.11%");
+            System.out.println("Total sum seks   = " + seks + " - Fordeling: " + Math.round(fordelingSeks * 100) + "% Forventet: 13.89%");
+            System.out.println("Total sum syv    = " + syv + " - Fordeling: " + Math.round(fordelingSyv * 100) + "% Forventet: 16.67%");
+            System.out.println("Total sum otte   = " + otte + " - Fordeling: " + Math.round(fordelingOtte * 100) + "% Forventet: 13.89%");
+            System.out.println("Total sum ni     = " + ni + " - Fordeling: " + Math.round(fordelingNi * 100) + "% Forventet: 11.11");
+            System.out.println("Total sum ti     = " + ti + " - Fordeling: " + Math.round(fordelingTi * 100) + "% Forventet: 8.33%");
+            System.out.println("Total sum elleve = " + elleve + " - Fordeling: " + Math.round(fordelingElleve * 100) + "% Forventet: 5.56%");
+            System.out.println("Total sum tolv   = " + tolv + " - Fordeling: " + Math.round(fordelingTolv * 100) + "% Forventet: 2.78%");
 
 
         }
@@ -95,20 +95,46 @@ public class Main {
             }
 
             System.out.println("PRÆCISIONSGRAD AF FORDELINGEN AF ØJENTAL");
+            //Vi skal tage større værdi-mindre værdi her, ikke bare resultat-beregnet, da dette kan give en præcision>100%
+            //Tror bare det er den forkerte formel
+            double teoriSnit = 2*(runs * (1 / (double) terningSideAntal));
+            /*
+            double accuracyEt = ((Math.max(et,teoriSnit) - Math.min(et,teoriSnit)) / teoriSnit) * 100;
 
-            double teoriSnit = runs * (1 / (double) terningSideAntal);
-            double accuracyEt = (((double) et - teoriSnit) / teoriSnit) * 100;
+            double accuracyTo = ((Math.max(to,teoriSnit) - Math.min(to,teoriSnit)) / teoriSnit) * 100;
 
-            double accuracyTo = (((double) to - teoriSnit) / teoriSnit) * 100;
+            double accuracyTre = ((Math.max(tre,teoriSnit) - Math.min(tre,teoriSnit)) / teoriSnit) * 100;
 
-            double accuracyTre = (((double) tre - teoriSnit) / teoriSnit) * 100;
+            double accuracyFire = ((Math.max(fire,teoriSnit) - Math.min(fire,teoriSnit)) / teoriSnit) * 100;
 
-            double accuracyFire = (((double) fire - teoriSnit) / teoriSnit) * 100;
+            double accuracyFem = ((Math.max(fem,teoriSnit) - Math.min(fem,teoriSnit)) / teoriSnit) * 100;
 
-            double accuracyFem = (((double) fem - teoriSnit) / teoriSnit) * 100;
+            double accuracySeks = ((Math.max(seks,teoriSnit) - Math.min(seks,teoriSnit)) / teoriSnit) * 100;
+*/
+            double accuracyEt = (et / teoriSnit) * 100;
 
-            double accuracySeks = (((double) seks - teoriSnit) / teoriSnit) * 100;
+            double accuracyTo = (to / teoriSnit) * 100;
 
+            double accuracyTre = (tre /teoriSnit) * 100;
+
+            double accuracyFire = (fire / teoriSnit) * 100;
+
+            double accuracyFem = (fem / teoriSnit) * 100;
+
+            double accuracySeks = (seks / teoriSnit) * 100;
+            System.out.println(runs);
+            System.out.println(et);
+            System.out.println(to);
+            System.out.println(tre);
+            System.out.println(fire);
+            System.out.println(fem);
+            System.out.println(seks);
+            System.out.println(accuracyEt);
+            System.out.println(accuracyTo);
+            System.out.println(accuracyTre);
+            System.out.println(accuracyFire);
+            System.out.println(accuracyFem);
+            System.out.println(accuracySeks);
             // Test af accuracy - burde altid returnere end værdi på 100
             double totalAccuracy = (accuracyEt + accuracyTo + accuracyTre + accuracyFire + accuracyFem + accuracySeks) / terningSideAntal;
 
@@ -131,8 +157,8 @@ public class Main {
             double lowestAccuracy1 = Math.max(accuracyEt, Math.max(accuracyTo, accuracyTre));
             double lowestAccuracy2 = Math.max(accuracyFire, Math.max(accuracyFem, accuracySeks));
             double lowestAccuracyFinal = Math.max(lowestAccuracy1, lowestAccuracy2);
-            System.out.print("\nTerningernes tilfældighed har en præcisionsgrad på: ");
-            System.out.format("%.2f", lowestAccuracyFinal);
+            System.out.print("\nTerningernes tilfældighed har denne gang en maksimal afvigelse på: ");
+            System.out.format("%.2f", (Math.abs(100-lowestAccuracyFinal)));
             System.out.print("%");
         }
 
