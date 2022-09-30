@@ -6,7 +6,7 @@ public class Main {
     public static void main(String[] args) {
 
         int i, runs, x, y;
-        double et = 0, to = 0, tre = 0, fire = 0, fem = 0, seks = 0, syv = 0, otte = 0, ni = 0, ti = 0, elleve = 0, tolv = 0;
+        double et = 0, to = 0, tre = 0, fire = 0, fem = 0, seks = 0, syv = 0, otte = 0, ni = 0, ti = 0, elleve = 0, tolv = 0; //burde ikke være hardcoded til antal sider
         Random random = new Random();
         Scanner scan = new Scanner(System.in);
         System.out.println("Vælg en af følgende test: \nTOTAL FORDELING AF TERNINGSUM (Tast 1)\nPRÆCISIONSGRAD AF FORDELINGEN AF ØJENTAL (Tast 2)");
@@ -37,20 +37,17 @@ public class Main {
                 }
             }
 
-            double totalSlag = runs;
-
-            double fordelingTo = (to / totalSlag);
-            double fordelingTre = (tre / totalSlag);
-            double fordelingFire = (fire / totalSlag);
-            double fordelingFem = (fem / totalSlag);
-            double fordelingSeks = (seks / totalSlag);
-            double fordelingSyv = (syv / totalSlag);
-            double fordelingOtte = (otte / totalSlag);
-            double fordelingNi = (ni / totalSlag);
-            double fordelingTi = (ti / totalSlag);
-            double fordelingElleve = (elleve / totalSlag);
-            double fordelingTolv = (tolv / totalSlag);
-
+            double fordelingTo = (to / runs);
+            double fordelingTre = (tre / runs);
+            double fordelingFire = (fire / runs);
+            double fordelingFem = (fem / runs);
+            double fordelingSeks = (seks / runs);
+            double fordelingSyv = (syv / runs);
+            double fordelingOtte = (otte / runs);
+            double fordelingNi = (ni / runs);
+            double fordelingTi = (ti / runs);
+            double fordelingElleve = (elleve / runs);
+            double fordelingTolv = (tolv / runs);
 
             //Printer svarene
             System.out.println("TOTAL FORDELING AF TERNINGSUM");
@@ -67,11 +64,10 @@ public class Main {
             System.out.println("Total sum tolv   = " + tolv + " - Fordeling: " + Math.round(fordelingTolv * 100) + "% Forventet: 2.78%");
         }
 
-
         else if (testMenu == 2) {
             //Jeg ved godt vi har halvvejs hardcoded en variabel, når der enten bare burde bruges værdien 6
             //Eller alternativt give brugeren mulighed for at vælge antal sider på terningen, men jeg har ikke tid til at fikse koden nu
-            //Feature to be released in later update
+            //Feature to be released in later revision
             int terningSideAntal = 6;
             for (i = 0; i < runs; i++) {
                 x = random.nextInt(terningSideAntal) + 1;
