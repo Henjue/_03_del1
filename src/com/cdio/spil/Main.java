@@ -22,7 +22,10 @@ public class Main {
                 System.out.println("Press enter to continue...");
                 player_1 = 0;
                 System.out.println("\n" + "Player 1 score is " + player_1);
-            } else if (x == y) {
+            }
+            while (x == y) {
+                if (player_1 >= 40)
+                    break;
                 System.out.println("Player 1 has rolled two identical and therefore get another throw");
                 System.out.println("Press enter to continue...");
                 b = spil.nextLine();
@@ -32,6 +35,8 @@ public class Main {
                 player_1 = player_1 + x + y;
                 System.out.println("Player 1 score is " + player_1);
                 spil = new Scanner(System.in);
+                if (x != y)
+                    break;
             }
 
             if (player_1 >= 40) {
@@ -51,7 +56,9 @@ public class Main {
                 player_2 = 0;
                 System.out.println("\n" + "Player 2 score is " + player_2);
             }
-            else if (x == y) {
+            while (x == y && x!= 6) {
+                if (player_2 >= 40)
+                    break;
                 System.out.println("Player 2 has rolled two identical and therefore get another throw");
                 System.out.println("Press enter to continue...");
                 b = spil.nextLine();
@@ -61,6 +68,8 @@ public class Main {
                 player_2 = player_2 + x + y;
                 System.out.println("Player 2 score is " + player_2);
                 spil = new Scanner(System.in);
+                if (x != y)
+                    break;
             }
             if (player_2 >= 40) {
                 System.out.println("Player 2 wins with " + player_2 + " points," + (player_2 - player_1) + " ahead of player 1");
