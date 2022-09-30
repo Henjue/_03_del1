@@ -1,10 +1,14 @@
 package com.cdio.spil;
 import java.util.Random;
+import java.util.Scanner;
 public class Main {
     public static void main(String[] args) {
-        int i, et = 0, to = 0, tre = 0, fire = 0, fem = 0, seks = 0, x, y;
+        int i, runs, et = 0, to = 0, tre = 0, fire = 0, fem = 0, seks = 0, x, y;
+        System.out.println("Indtast antal runs"); //lader brugeren definere antal runs
+        Scanner scan = new Scanner(System.in);
+        runs = scan.nextInt();
         Random random = new Random();
-        for (i = 0; i <= 1000000; i++){
+        for (i = 0; i < runs; i++){
             x = random.nextInt(6) + 1;
             y = random.nextInt(6) + 1;
             switch (x) { //tester for terning x
@@ -30,7 +34,5 @@ public class Main {
         System.out.println("Total af firere = " + fire);
         System.out.println("Total af femere = " + fem);
         System.out.println("Total af seksere = " + seks);
-
-
     }
 }
