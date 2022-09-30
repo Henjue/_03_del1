@@ -4,13 +4,13 @@ import java.util.Scanner;
 public class Main {
     public static void main(String[] args) {
         int x, y, player_1 = 0, player_2 = 0;
-        String b;
+        String b; //b bruges bare til nextline senere
         Scanner spil;
         while(true) {
             Random random = new Random();
             spil = new Scanner(System.in);
             System.out.println("\n" + "Player 1, press enter to roll the die");
-            b = spil.nextLine();
+            b = spil.nextLine(); //nextline bruges til at vente på brugerinput så spillet ikke afsluttes med det samme
             x = random.nextInt(6) + 1;
             y = random.nextInt(6) + 1;
             System.out.println("Dice One: " + x + "\n" + "Dice Two: " + y);
