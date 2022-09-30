@@ -115,7 +115,7 @@ public class Main {
             } else {
                 System.out.print("a problem occured");
             }
-            System.out.println("\n(Teoretisk gennemsnitsgrænse ~" + Math.round(teoriSnit) + ")");
+            System.out.println("\nTeoretisk gennemsnitsgrænse ~" + Math.round(teoriSnit) + " - Da der er 2 terninger");
 
             System.out.println("Total af etere = " + Math.round(et));
             System.out.println("Total af toere = " + Math.round(to));
