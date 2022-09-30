@@ -1,7 +1,7 @@
 package com.cdio.spil;
 import java.util.Random;
 import java.util.Scanner;
-public class Main {
+public class TestAfRandom {
     public static void main(String[] args) {
         int i, runs, to = 0, tre = 0, fire = 0, fem = 0, seks = 0, syv = 0, otte = 0, ni = 0, ti = 0, elleve = 0, tolv = 0, x, y;
         System.out.print("Indtast antal runs  "); //lader brugeren definere antal runs
