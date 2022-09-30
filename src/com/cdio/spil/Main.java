@@ -11,7 +11,8 @@ public class Main {
         Scanner scan = new Scanner(System.in);
         System.out.println("Vælg en af følgende test: \nTOTAL FORDELING AF TERNINGSUM (Tast 1)\nPRÆCISIONSGRAD AF FORDELINGEN AF ØJENTAL (Tast 2)");
         int testMenu = scan.nextInt();
-
+        if (testMenu != 1 && testMenu != 2)
+            System.out.println("Du skulle vælge 1 eller 2");
         System.out.print("Indtast antal runs  "); //lader brugeren definere antal runs
         runs = scan.nextInt();
         System.out.println(" ");
@@ -35,7 +36,6 @@ public class Main {
                     case 12 -> tolv++;
                 }
             }
-
 
             double totalSlag = runs;
 
@@ -107,19 +107,7 @@ public class Main {
             double accuracyFem = (fem / teoriSnit) * 100;
 
             double accuracySeks = (seks / teoriSnit) * 100;
-            System.out.println(runs);
-            System.out.println(et);
-            System.out.println(to);
-            System.out.println(tre);
-            System.out.println(fire);
-            System.out.println(fem);
-            System.out.println(seks);
-            System.out.println(accuracyEt);
-            System.out.println(accuracyTo);
-            System.out.println(accuracyTre);
-            System.out.println(accuracyFire);
-            System.out.println(accuracyFem);
-            System.out.println(accuracySeks);
+
             // Test af accuracy - burde altid returnere end værdi på 100
             double totalAccuracy = (accuracyEt + accuracyTo + accuracyTre + accuracyFire + accuracyFem + accuracySeks) / terningSideAntal;
 
@@ -131,12 +119,12 @@ public class Main {
             }
             System.out.println("\n(Teoretisk gennemsnitsgrænse ~" + Math.round(teoriSnit) + ")");
 
-            System.out.println("Total af etere = " + et);
-            System.out.println("Total af toere = " + to);
-            System.out.println("Total af treere = " + tre);
-            System.out.println("Total af firere = " + fire);
-            System.out.println("Total af femere = " + fem);
-            System.out.println("Total af seksere = " + seks);
+            System.out.println("Total af etere = " + Math.round(et));
+            System.out.println("Total af toere = " + Math.round(to));
+            System.out.println("Total af treere = " + Math.round(tre));
+            System.out.println("Total af firere = " + Math.round(fire));
+            System.out.println("Total af femere = " + Math.round(fem));
+            System.out.println("Total af seksere = " + Math.round(seks));
 
 
             double lowestAccuracy1 = Math.max(accuracyEt, Math.max(accuracyTo, accuracyTre));
@@ -145,10 +133,7 @@ public class Main {
             System.out.print("\nTerningernes tilfældighed har denne gang en maksimal afvigelse på: ");
             System.out.format("%.2f", (Math.abs(100-lowestAccuracyFinal)));
             System.out.print("%");
-        }
 
-        else {
-            System.out.println("En fejl opstod");
         }
     }
 }
