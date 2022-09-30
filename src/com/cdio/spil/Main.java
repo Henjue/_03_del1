@@ -1,7 +1,7 @@
 package com.cdio.spil;
 import java.util.Random;
 import java.util.Scanner;
-public class Main  {
+public class Basegame {
     public static void main(String[] args) {
         int x, y, player_1 = 0, player_2 = 0;
         String b;
