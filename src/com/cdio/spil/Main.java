@@ -1,6 +1,7 @@
 package com.cdio.spil;
 import java.util.Random;
 import java.util.Scanner;
+//Alpha test BEGIN!!!
 public class Main {
     public static void main(String[] args) {
         int x, y, player_1 = 0, player_2 = 0;
