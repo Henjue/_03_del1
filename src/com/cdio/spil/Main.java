@@ -45,10 +45,6 @@ public class Main {
                     break;
                 }
             }
-            if (player_1 >= 40) {
-                System.out.println("Player 1 wins with " + player_1 + " points," + (player_1 - player_2) + " ahead of player 2");
-                break;
-            }
             System.out.println("\n" + "Player 2, press enter to roll the die");
             b = spil.nextLine();
             x = random.nextInt(6) + 1;
@@ -84,9 +80,137 @@ public class Main {
                     break;
                 }
             }
-            if (player_2 >= 40) {
-                System.out.println("Player 2 wins with " + player_2 + " points," + (player_2 - player_1) + " ahead of player 1");
-                break;
+            if (player_1 >= 40) {
+                while (true){
+                    System.out.println("\n" + "Player 2, press enter to roll the die");
+                    b = spil.nextLine();
+                    x = random.nextInt(6) + 1;
+                    y = random.nextInt(6) + 1;
+                    System.out.println("Dice One: " + x + "\n" + "Dice Two: " + y);
+                    player_2 = player_2 + x + y;
+                    if (player_2 >= 40) {
+                        System.out.println("\n" + "Player 1, has more than 40 points roll two identical to win");
+                        b = spil.nextLine();
+                        x = random.nextInt(6) + 1;
+                        y = random.nextInt(6) + 1;
+                        System.out.println("Dice One: " + x + "\n" + "Dice Two: " + y);
+                        if (x == y && x == 1) {
+                            System.out.println("Player 1 has rolled two " + x + "'s\n and loses all points");
+                            System.out.println("Press enter to continue...");
+                            player_1 = 0;
+                            System.out.println("\n" + "Player 1 score is " + player_1);
+                            break;
+                        }
+                        else if (x == y) {
+                            System.out.println("Player 1 wins");
+                            break;
+                        }
+                        else {
+                            System.out.println("\n" + "Player 2, has more than 40 points roll two identical to win");
+                            b = spil.nextLine();
+                            x = random.nextInt(6) + 1;
+                            y = random.nextInt(6) + 1;
+                            System.out.println("Dice One: " + x + "\n" + "Dice Two: " + y);
+                            if (x == y && x == 1) {
+                                System.out.println("Player 2 has rolled two " + x + "'s\n and loses all points");
+                                System.out.println("Press enter to continue...");
+                                player_2 = 0;
+                                System.out.println("\n" + "Player 2 score is " + player_2);
+                                break;
+                            }
+                            else if (x == y) {
+                                System.out.println("Player 2 wins");
+                                break;
+                                }
+                            }
+                        }
+                    else {
+                        System.out.println("\n" + "Player 1, has more than 40 points roll two identical to win");
+                        b = spil.nextLine();
+                        x = random.nextInt(6) + 1;
+                        y = random.nextInt(6) + 1;
+                        System.out.println("Dice One: " + x + "\n" + "Dice Two: " + y);
+                        if (x == y && x == 1){
+                            System.out.println("Player 1 has rolled two " + x + "'s\n and loses all points");
+                            System.out.println("Press enter to continue...");
+                            player_1 = 0;
+                            System.out.println("\n" + "Player 1 score is " + player_1);
+                            break;
+                        }
+                        else if (x == y){
+                            System.out.println("Player 1 wins");
+                            break;
+                        }
+                    }
+                }
+                if (player_1 > 40)
+                    break;
+            }
+            else if (player_2 >= 40) {
+                while (true){
+                    System.out.println("\n" + "Player 1, press enter to roll the die");
+                    b = spil.nextLine();
+                    x = random.nextInt(6) + 1;
+                    y = random.nextInt(6) + 1;
+                    System.out.println("Dice One: " + x + "\n" + "Dice Two: " + y);
+                    player_1 = player_1 + x + y;
+                    if (player_1 >= 40) {
+                        System.out.println("\n" + "Player 2, has more than 40 points roll two identical to win");
+                        b = spil.nextLine();
+                        x = random.nextInt(6) + 1;
+                        y = random.nextInt(6) + 1;
+                        System.out.println("Dice One: " + x + "\n" + "Dice Two: " + y);
+                        if (x == y && x == 1) {
+                            System.out.println("Player 2 has rolled two " + x + "'s\n and loses all points");
+                            System.out.println("Press enter to continue...");
+                            player_2= 0;
+                            System.out.println("\n" + "Player 2 score is " + player_2);
+                            break;
+                        }
+                        else if (x == y) {
+                            System.out.println("Player 2 wins");
+                            break;
+                        }
+                        else {
+                            System.out.println("\n" + "Player 1, has more than 40 points roll two identical to win");
+                            b = spil.nextLine();
+                            x = random.nextInt(6) + 1;
+                            y = random.nextInt(6) + 1;
+                            System.out.println("Dice One: " + x + "\n" + "Dice Two: " + y);
+                            if (x == y && x == 1) {
+                                System.out.println("Player 1 has rolled two " + x + "'s\n and loses all points");
+                                System.out.println("Press enter to continue...");
+                                player_1 = 0;
+                                System.out.println("\n" + "Player 1 score is " + player_1);
+                                break;
+                            }
+                            else if (x == y) {
+                                System.out.println("Player 1 wins");
+                                break;
+                            }
+                        }
+                    }
+                    else {
+                        System.out.println("\n" + "Player 2, has more than 40 points roll two identical to win");
+                        b = spil.nextLine();
+                        x = random.nextInt(6) + 1;
+                        y = random.nextInt(6) + 1;
+                        System.out.println("Dice One: " + x + "\n" + "Dice Two: " + y);
+                        if (x == y && x == 1){
+                            System.out.println("Player 2 has rolled two " + x + "'s\n and loses all points");
+                            System.out.println("Press enter to continue...");
+                            player_2 = 0;
+                            System.out.println("\n" + "Player 2 score is " + player_2);
+                            break;
+                        }
+                        else if (x == y){
+                            System.out.println("Player 2 wins");
+                            break;
+                        }
+                    }
+                }
+                if (player_2 > 40)
+                    break;
             }
 
         }
