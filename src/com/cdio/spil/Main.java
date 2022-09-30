@@ -69,7 +69,9 @@ public class Main {
 
 
         else if (testMenu == 2) {
-
+            //Jeg ved godt vi har halvvejs hardcoded en variabel, når der enten bare burde bruges værdien 6
+            //Eller alternativt give brugeren mulighed for at vælge antal sider på terningen, men jeg har ikke tid til at fikse koden nu
+            //Feature to be released in later update
             int terningSideAntal = 6;
             for (i = 0; i < runs; i++) {
                 x = random.nextInt(terningSideAntal) + 1;
