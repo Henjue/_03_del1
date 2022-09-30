@@ -69,7 +69,7 @@ public class Main {
                 System.out.println("Player 2 score is " + player_2);
                 spil = new Scanner(System.in);
                 if (x != y)
-                    break;
+                    break; //tror denne her del er unødvendig da while() loopet automatisk vil stoppe
             }
             if (player_2 >= 40) {
                 System.out.println("Player 2 wins with " + player_2 + " points," + (player_2 - player_1) + " ahead of player 1");
