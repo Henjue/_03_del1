@@ -4,7 +4,8 @@ import java.util.Scanner;
 public class Main {
     public static void main(String[] args) {
         int i, runs, et = 0, to = 0, tre = 0, fire = 0, fem = 0, seks = 0, x, y;
-        System.out.println("Indtast antal runs"); //lader brugeren definere antal runs
+        System.out.print("Indtast antal runs  "); //lader brugeren definere antal runs
+        System.out.println("(NB: Antal runs ganges med 2, da der er to terninger)");
         Scanner scan = new Scanner(System.in);
         runs = scan.nextInt();
         Random random = new Random();
