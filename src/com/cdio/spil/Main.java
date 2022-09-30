@@ -37,7 +37,7 @@ public class Main {
             }
 
 
-            double totalSlag = (to + tre + fire + fem + seks + syv + otte + ni + ti + elleve + tolv);
+            double totalSlag = runs;
 
             double fordelingTo = (to / totalSlag);
             double fordelingTre = (tre / totalSlag);
@@ -65,8 +65,6 @@ public class Main {
             System.out.println("Total sum ti     = " + ti + " - Fordeling: " + Math.round(fordelingTi * 100) + "% Forventet: 8.33%");
             System.out.println("Total sum elleve = " + elleve + " - Fordeling: " + Math.round(fordelingElleve * 100) + "% Forventet: 5.56%");
             System.out.println("Total sum tolv   = " + tolv + " - Fordeling: " + Math.round(fordelingTolv * 100) + "% Forventet: 2.78%");
-
-
         }
 
 
@@ -96,21 +94,8 @@ public class Main {
 
             System.out.println("PRÆCISIONSGRAD AF FORDELINGEN AF ØJENTAL");
             //Vi skal tage større værdi-mindre værdi her, ikke bare resultat-beregnet, da dette kan give en præcision>100%
-            //Tror bare det er den forkerte formel
             double teoriSnit = 2*(runs * (1 / (double) terningSideAntal));
-            /*
-            double accuracyEt = ((Math.max(et,teoriSnit) - Math.min(et,teoriSnit)) / teoriSnit) * 100;
 
-            double accuracyTo = ((Math.max(to,teoriSnit) - Math.min(to,teoriSnit)) / teoriSnit) * 100;
-
-            double accuracyTre = ((Math.max(tre,teoriSnit) - Math.min(tre,teoriSnit)) / teoriSnit) * 100;
-
-            double accuracyFire = ((Math.max(fire,teoriSnit) - Math.min(fire,teoriSnit)) / teoriSnit) * 100;
-
-            double accuracyFem = ((Math.max(fem,teoriSnit) - Math.min(fem,teoriSnit)) / teoriSnit) * 100;
-
-            double accuracySeks = ((Math.max(seks,teoriSnit) - Math.min(seks,teoriSnit)) / teoriSnit) * 100;
-*/
             double accuracyEt = (et / teoriSnit) * 100;
 
             double accuracyTo = (to / teoriSnit) * 100;
@@ -144,7 +129,7 @@ public class Main {
             } else {
                 System.out.print("a problem occured");
             }
-            System.out.println("\n(Teoretisk gennemsnitsgrænse ~" + Math.round(teoriSnit * 2) + ")");
+            System.out.println("\n(Teoretisk gennemsnitsgrænse ~" + Math.round(teoriSnit) + ")");
 
             System.out.println("Total af etere = " + et);
             System.out.println("Total af toere = " + to);
